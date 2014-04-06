@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9053274518F2065000622295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274418F2065000622295 /* Foundation.framework */; };
+		9053274718F2065000622295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274618F2065000622295 /* CoreGraphics.framework */; };
+		9053274918F2065000622295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274818F2065000622295 /* UIKit.framework */; };
+		9053274B18F2065000622295 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274A18F2065000622295 /* CoreData.framework */; };
+		9053275118F2065000622295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9053274F18F2065000622295 /* InfoPlist.strings */; };
+		9053275318F2065000622295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9053275218F2065000622295 /* main.m */; };
+		9053275718F2065000622295 /* DSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9053275618F2065000622295 /* DSAppDelegate.m */; };
+		9053275A18F2065000622295 /* LifeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9053275818F2065000622295 /* LifeTracker.xcdatamodeld */; };
+		9053275C18F2065000622295 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9053275B18F2065000622295 /* Images.xcassets */; };
+		9053276318F2065000622295 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053276218F2065000622295 /* XCTest.framework */; };
+		9053276418F2065000622295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274418F2065000622295 /* Foundation.framework */; };
+		9053276518F2065000622295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274818F2065000622295 /* UIKit.framework */; };
+		9053276618F2065000622295 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274A18F2065000622295 /* CoreData.framework */; };
+		9053276E18F2065000622295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9053276C18F2065000622295 /* InfoPlist.strings */; };
+		9053277018F2065100622295 /* LifeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9053276F18F2065100622295 /* LifeTrackerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9053276718F2065000622295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9053273918F2065000622295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9053274018F2065000622295;
+			remoteInfo = LifeTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9053274118F2065000622295 /* LifeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9053274418F2065000622295 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9053274618F2065000622295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9053274818F2065000622295 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9053274A18F2065000622295 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9053274E18F2065000622295 /* LifeTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeTracker-Info.plist"; sourceTree = "<group>"; };
+		9053275018F2065000622295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9053275218F2065000622295 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9053275418F2065000622295 /* LifeTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LifeTracker-Prefix.pch"; sourceTree = "<group>"; };
+		9053275518F2065000622295 /* DSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAppDelegate.h; sourceTree = "<group>"; };
+		9053275618F2065000622295 /* DSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAppDelegate.m; sourceTree = "<group>"; };
+		9053275918F2065000622295 /* LifeTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTracker.xcdatamodel; sourceTree = "<group>"; };
+		9053275B18F2065000622295 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9053276118F2065000622295 /* LifeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9053276218F2065000622295 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9053276B18F2065000622295 /* LifeTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeTrackerTests-Info.plist"; sourceTree = "<group>"; };
+		9053276D18F2065000622295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9053276F18F2065100622295 /* LifeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeTrackerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9053273E18F2065000622295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053274718F2065000622295 /* CoreGraphics.framework in Frameworks */,
+				9053274B18F2065000622295 /* CoreData.framework in Frameworks */,
+				9053274918F2065000622295 /* UIKit.framework in Frameworks */,
+				9053274518F2065000622295 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053275E18F2065000622295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053276318F2065000622295 /* XCTest.framework in Frameworks */,
+				9053276618F2065000622295 /* CoreData.framework in Frameworks */,
+				9053276518F2065000622295 /* UIKit.framework in Frameworks */,
+				9053276418F2065000622295 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9053273818F2065000622295 = {
+			isa = PBXGroup;
+			children = (
+				9053274C18F2065000622295 /* LifeTracker */,
+				9053276918F2065000622295 /* LifeTrackerTests */,
+				9053274318F2065000622295 /* Frameworks */,
+				9053274218F2065000622295 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9053274218F2065000622295 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9053274118F2065000622295 /* LifeTracker.app */,
+				9053276118F2065000622295 /* LifeTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9053274318F2065000622295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9053274418F2065000622295 /* Foundation.framework */,
+				9053274618F2065000622295 /* CoreGraphics.framework */,
+				9053274818F2065000622295 /* UIKit.framework */,
+				9053274A18F2065000622295 /* CoreData.framework */,
+				9053276218F2065000622295 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9053274C18F2065000622295 /* LifeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				9053275518F2065000622295 /* DSAppDelegate.h */,
+				9053275618F2065000622295 /* DSAppDelegate.m */,
+				9053275B18F2065000622295 /* Images.xcassets */,
+				9053275818F2065000622295 /* LifeTracker.xcdatamodeld */,
+				9053274D18F2065000622295 /* Supporting Files */,
+			);
+			path = LifeTracker;
+			sourceTree = "<group>";
+		};
+		9053274D18F2065000622295 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9053274E18F2065000622295 /* LifeTracker-Info.plist */,
+				9053274F18F2065000622295 /* InfoPlist.strings */,
+				9053275218F2065000622295 /* main.m */,
+				9053275418F2065000622295 /* LifeTracker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9053276918F2065000622295 /* LifeTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9053276F18F2065100622295 /* LifeTrackerTests.m */,
+				9053276A18F2065000622295 /* Supporting Files */,
+			);
+			path = LifeTrackerTests;
+			sourceTree = "<group>";
+		};
+		9053276A18F2065000622295 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9053276B18F2065000622295 /* LifeTrackerTests-Info.plist */,
+				9053276C18F2065000622295 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9053274018F2065000622295 /* LifeTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9053277318F2065100622295 /* Build configuration list for PBXNativeTarget "LifeTracker" */;
+			buildPhases = (
+				9053273D18F2065000622295 /* Sources */,
+				9053273E18F2065000622295 /* Frameworks */,
+				9053273F18F2065000622295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeTracker;
+			productName = LifeTracker;
+			productReference = 9053274118F2065000622295 /* LifeTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9053276018F2065000622295 /* LifeTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9053277618F2065100622295 /* Build configuration list for PBXNativeTarget "LifeTrackerTests" */;
+			buildPhases = (
+				9053275D18F2065000622295 /* Sources */,
+				9053275E18F2065000622295 /* Frameworks */,
+				9053275F18F2065000622295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9053276818F2065000622295 /* PBXTargetDependency */,
+			);
+			name = LifeTrackerTests;
+			productName = LifeTrackerTests;
+			productReference = 9053276118F2065000622295 /* LifeTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9053273918F2065000622295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Danny Salowe";
+				TargetAttributes = {
+					9053276018F2065000622295 = {
+						TestTargetID = 9053274018F2065000622295;
+					};
+				};
+			};
+			buildConfigurationList = 9053273C18F2065000622295 /* Build configuration list for PBXProject "LifeTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9053273818F2065000622295;
+			productRefGroup = 9053274218F2065000622295 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9053274018F2065000622295 /* LifeTracker */,
+				9053276018F2065000622295 /* LifeTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9053273F18F2065000622295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053275118F2065000622295 /* InfoPlist.strings in Resources */,
+				9053275C18F2065000622295 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053275F18F2065000622295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053276E18F2065000622295 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9053273D18F2065000622295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053275318F2065000622295 /* main.m in Sources */,
+				9053275718F2065000622295 /* DSAppDelegate.m in Sources */,
+				9053275A18F2065000622295 /* LifeTracker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053275D18F2065000622295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053277018F2065100622295 /* LifeTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9053276818F2065000622295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9053274018F2065000622295 /* LifeTracker */;
+			targetProxy = 9053276718F2065000622295 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9053274F18F2065000622295 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9053275018F2065000622295 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9053276C18F2065000622295 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9053276D18F2065000622295 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9053277118F2065100622295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9053277218F2065100622295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9053277418F2065100622295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
+				INFOPLIST_FILE = "LifeTracker/LifeTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9053277518F2065100622295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
+				INFOPLIST_FILE = "LifeTracker/LifeTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9053277718F2065100622295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifeTracker.app/LifeTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LifeTrackerTests/LifeTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9053277818F2065100622295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifeTracker.app/LifeTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
+				INFOPLIST_FILE = "LifeTrackerTests/LifeTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9053273C18F2065000622295 /* Build configuration list for PBXProject "LifeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053277118F2065100622295 /* Debug */,
+				9053277218F2065100622295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9053277318F2065100622295 /* Build configuration list for PBXNativeTarget "LifeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053277418F2065100622295 /* Debug */,
+				9053277518F2065100622295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9053277618F2065100622295 /* Build configuration list for PBXNativeTarget "LifeTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053277718F2065100622295 /* Debug */,
+				9053277818F2065100622295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9053275818F2065000622295 /* LifeTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9053275918F2065000622295 /* LifeTracker.xcdatamodel */,
+			);
+			currentVersion = 9053275918F2065000622295 /* LifeTracker.xcdatamodel */;
+			path = LifeTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9053273918F2065000622295 /* Project object */;
+}
