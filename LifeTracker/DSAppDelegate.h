@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DSActivity.h"
+#import "Activity.h"
 
 @interface DSAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -18,5 +20,12 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+//core data
+- (BOOL)addActivityFromWrapper:(DSActivity *)activity;
+- (BOOL)checkIfAlreadyRegistered:(DSActivity*)activity;
+- (NSArray *)allActivities;
+- (BOOL)deleteActivityFromWrapper:(DSActivity *)activity;
+- (BOOL)deleteActivity:(Activity *)activity;
 
 @end

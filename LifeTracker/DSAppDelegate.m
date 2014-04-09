@@ -16,10 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -64,6 +61,111 @@
         } 
     }
 }
+
+#pragma mark - Core Date Implementation
+
+- (BOOL)addActivityFromWrapper:(DSActivity *)activity
+{
+    if (![self checkIfAlreadyRegistered:activity]) {
+        Activity *activityToStore = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+                                                          inManagedObjectContext:self.managedObjectContext];
+        activityToStore.name = activity.name;
+        activityToStore.time = activity.time;
+        activityToStore.date = activity.date;
+        activityToStore.aboveBelow = activity.aboveBelow;
+        activityToStore.startTime = activity.startTime;
+        activityToStore.endTime = activity.endTime;
+        activityToStore.type = activity.type;
+        activityToStore.active = activity.active;
+        activityToStore.completed = activity.completed;
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {     //committing changes
+            return NO;
+        }
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)checkIfAlreadyRegistered:(DSActivity *)activity
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND time == %@ AND aboveBelow == %@ AND date == %@ AND startTime == %@ AND endTime == %@ AND active == %@ AND completed == %@",activity.name, activity.type,activity.time, activity.aboveBelow, activity.date, activity.startTime, activity.endTime, activity.active, activity.completed];
+    fetchRequest.entity = entity;
+    
+    NSError *error;
+    NSArray *fetchedResults = [self.managedObjectContext
+                               executeFetchRequest:fetchRequest
+                               error:&error];
+    
+    return [fetchedResults count] > 0;
+}
+
+- (NSArray *)allActivities
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.entity = entity;
+    
+    NSError *error;
+    NSArray *fetchedResults = [self.managedObjectContext
+                               executeFetchRequest:fetchRequest
+                               error:&error];
+    
+    return fetchedResults;
+}
+
+
+- (BOOL)deleteActivityFromWrapper:(DSActivity *)activity
+{
+    Activity *activityToDelete = [[Activity alloc] init];
+    activityToDelete.name = activity.name;
+    activityToDelete.time = activity.time;
+    activityToDelete.date = activity.date;
+    activityToDelete.aboveBelow = activity.aboveBelow;
+    activityToDelete.startTime = activity.startTime;
+    activityToDelete.endTime = activity.endTime;
+    activityToDelete.type = activity.type;
+    activityToDelete.active = activity.active;
+    activityToDelete.completed = activity.completed;
+    
+    [self.managedObjectContext deleteObject:activityToDelete];
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {     //committing changes
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)deleteActivity:(Activity *)activity
+{
+    Activity *activityToDelete = activity;
+    activityToDelete.name = activity.name;
+    activityToDelete.time = activity.time;
+    activityToDelete.date = activity.date;
+    activityToDelete.aboveBelow = activity.aboveBelow;
+    activityToDelete.startTime = activity.startTime;
+    activityToDelete.endTime = activity.endTime;
+    activityToDelete.type = activity.type;
+    activityToDelete.active = activity.active;
+    activityToDelete.completed = activity.completed;
+    [self.managedObjectContext deleteObject:activityToDelete];
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {     //committing changes
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 #pragma mark - Core Data stack
 

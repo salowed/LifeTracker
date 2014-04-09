@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9032E1DA18F4D29F00AC13F3 /* DSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032E1D918F4D29F00AC13F3 /* DSActivity.m */; };
+		9032E1DD18F4D2CB00AC13F3 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032E1DC18F4D2CB00AC13F3 /* Activity.m */; };
 		9053274518F2065000622295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274418F2065000622295 /* Foundation.framework */; };
 		9053274718F2065000622295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274618F2065000622295 /* CoreGraphics.framework */; };
 		9053274918F2065000622295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274818F2065000622295 /* UIKit.framework */; };
@@ -22,6 +24,7 @@
 		9053276618F2065000622295 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053274A18F2065000622295 /* CoreData.framework */; };
 		9053276E18F2065000622295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9053276C18F2065000622295 /* InfoPlist.strings */; };
 		9053277018F2065100622295 /* LifeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9053276F18F2065100622295 /* LifeTrackerTests.m */; };
+		9053277A18F207E000622295 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053277918F207E000622295 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9032E1D818F4D29F00AC13F3 /* DSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivity.h; sourceTree = "<group>"; };
+		9032E1D918F4D29F00AC13F3 /* DSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivity.m; sourceTree = "<group>"; };
+		9032E1DB18F4D2CB00AC13F3 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		9032E1DC18F4D2CB00AC13F3 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		9053274118F2065000622295 /* LifeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9053274418F2065000622295 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9053274618F2065000622295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +60,7 @@
 		9053276B18F2065000622295 /* LifeTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		9053276D18F2065000622295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9053276F18F2065100622295 /* LifeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeTrackerTests.m; sourceTree = "<group>"; };
+		9053277918F207E000622295 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,11 @@
 			children = (
 				9053275518F2065000622295 /* DSAppDelegate.h */,
 				9053275618F2065000622295 /* DSAppDelegate.m */,
+				9032E1DB18F4D2CB00AC13F3 /* Activity.h */,
+				9032E1DC18F4D2CB00AC13F3 /* Activity.m */,
+				9032E1D818F4D29F00AC13F3 /* DSActivity.h */,
+				9032E1D918F4D29F00AC13F3 /* DSActivity.m */,
+				9053277918F207E000622295 /* Storyboard.storyboard */,
 				9053275B18F2065000622295 /* Images.xcassets */,
 				9053275818F2065000622295 /* LifeTracker.xcdatamodeld */,
 				9053274D18F2065000622295 /* Supporting Files */,
@@ -231,6 +244,7 @@
 			files = (
 				9053275118F2065000622295 /* InfoPlist.strings in Resources */,
 				9053275C18F2065000622295 /* Images.xcassets in Resources */,
+				9053277A18F207E000622295 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +266,8 @@
 				9053275318F2065000622295 /* main.m in Sources */,
 				9053275718F2065000622295 /* DSAppDelegate.m in Sources */,
 				9053275A18F2065000622295 /* LifeTracker.xcdatamodeld in Sources */,
+				9032E1DA18F4D29F00AC13F3 /* DSActivity.m in Sources */,
+				9032E1DD18F4D2CB00AC13F3 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +464,7 @@
 				9053277518F2065100622295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9053277618F2065100622295 /* Build configuration list for PBXNativeTarget "LifeTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +473,7 @@
 				9053277818F2065100622295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
