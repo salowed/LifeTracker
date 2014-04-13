@@ -7,8 +7,13 @@
 //
 
 #import "DSActivityTableViewController.h"
+#import "DSAppDelegate.h"
 
 @interface DSActivityTableViewController ()
+
+@property (nonatomic, strong) DSAppDelegate *appDelegate;
+@property (strong, nonatomic) NSArray *activities;
+
 
 @end
 
@@ -23,6 +28,15 @@
     return self;
 }
 
+- (DSAppDelegate *)appDelegate
+{
+    if (!_appDelegate) {
+        _appDelegate = (DSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    }
+    
+    return _appDelegate;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +46,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.activities = self.appDelegate.allActivities;
+        [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +65,46 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.activities.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    Activity *curActivity = [self.activities objectAtIndex:indexPath.row];
+    NSString *name = curActivity.name;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = name;
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Activity *curActivity = [self.activities objectAtIndex:indexPath.row];
+    NSString *type = curActivity.type;
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Type" message:type delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.

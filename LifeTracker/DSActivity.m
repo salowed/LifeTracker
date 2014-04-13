@@ -22,6 +22,8 @@
         _endTime = [decoder decodeObjectForKey:@"endTime"];
         _active = [decoder decodeObjectForKey:@"active"];
         _completed = [decoder decodeObjectForKey:@"completed"];
+        _longitude = [decoder decodeObjectForKey:@"longitude"];
+        _longitude = [decoder decodeObjectForKey:@"latitude"];
     }
     
     return self;
@@ -38,6 +40,8 @@
     [coder encodeObject:_endTime forKey:@"endTime"];
     [coder encodeObject:_active forKey:@"active"];
     [coder encodeObject:_completed forKey:@"completed"];
+    [coder encodeObject:_longitude forKey:@"longitude"];
+    [coder encodeObject:_longitude forKey:@"latitude"];
 }
 
 

@@ -19,5 +19,7 @@
 @dynamic endTime;
 @dynamic active;
 @dynamic completed;
+@dynamic longitude;
+@dynamic latitude;
 
 @end

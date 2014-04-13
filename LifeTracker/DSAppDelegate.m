@@ -78,6 +78,8 @@
         activityToStore.type = activity.type;
         activityToStore.active = activity.active;
         activityToStore.completed = activity.completed;
+        activityToStore.longitude = activity.longitude;
+        activityToStore.latitude = activity.latitude;
         
         NSError *error;
         if (![self.managedObjectContext save:&error]) {     //committing changes
@@ -95,7 +97,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
                                               inManagedObjectContext:self.managedObjectContext];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND time == %@ AND aboveBelow == %@ AND date == %@ AND startTime == %@ AND endTime == %@ AND active == %@ AND completed == %@",activity.name, activity.type,activity.time, activity.aboveBelow, activity.date, activity.startTime, activity.endTime, activity.active, activity.completed];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND time == %@ AND aboveBelow == %@ AND date == %@ AND startTime == %@ AND endTime == %@ AND active == %@ AND completed == %@ AND latitude == %@ AND longitude == %@",activity.name, activity.type,activity.time, activity.aboveBelow, activity.date, activity.startTime, activity.endTime, activity.active, activity.completed, activity.latitude, activity.longitude];
     fetchRequest.entity = entity;
     
     NSError *error;
@@ -134,6 +136,8 @@
     activityToDelete.type = activity.type;
     activityToDelete.active = activity.active;
     activityToDelete.completed = activity.completed;
+    activityToDelete.latitude = activity.latitude;
+    activityToDelete.longitude = activity.longitude;
     
     [self.managedObjectContext deleteObject:activityToDelete];
     NSError *error;
@@ -156,6 +160,9 @@
     activityToDelete.type = activity.type;
     activityToDelete.active = activity.active;
     activityToDelete.completed = activity.completed;
+    activityToDelete.latitude = activity.latitude;
+    activityToDelete.longitude = activity.longitude;
+    
     [self.managedObjectContext deleteObject:activityToDelete];
     NSError *error;
     if (![self.managedObjectContext save:&error]) {     //committing changes
