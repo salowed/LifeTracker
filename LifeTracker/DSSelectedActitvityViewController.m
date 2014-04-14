@@ -7,6 +7,7 @@
 //
 
 #import "DSSelectedActitvityViewController.h"
+#import "DSAppDelegate.h"
 
 @interface DSSelectedActitvityViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
@@ -14,10 +15,22 @@
 @property (weak, nonatomic) IBOutlet UILabel *todayField;
 @property (weak, nonatomic) IBOutlet UILabel *goalField;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (nonatomic, strong) DSAppDelegate *appDelegate;
+@property (nonatomic, strong) Activity *selectedActivity;
 
 @end
 
 @implementation DSSelectedActitvityViewController
+
+
+- (DSAppDelegate *)appDelegate
+{
+    if (!_appDelegate) {
+        _appDelegate = (DSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    }
+    
+    return _appDelegate;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +45,57 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    for(int i = 0; i < self.appDelegate.allActivities.count; i++){
+        Activity *activity = self.appDelegate.allActivities[i];
+        if([activity.name isEqualToString:self.activityTitle]){
+            self.selectedActivity = activity;
+            break;
+        }
+    }
+    
+    self.navigationBar.title = self.selectedActivity.name;
+    
+    if([self.selectedActivity.type isEqualToString:@"Time"]){
+        int hour = [self.selectedActivity.time integerValue]/60;
+        int minute = [self.selectedActivity.time integerValue] - (hour * 60);
+        self.goalField.text = [NSString stringWithFormat:@"%d:%d", hour, minute];
+        
+        if([self.selectedActivity.startTime isEqualToString:@"NO"]){
+            self.todayField.text = @"00:00";
+            self.progressBar.progress = 0.0;
+        }
+        else if([self.selectedActivity.endTime isEqualToString:@"NO"]){
+            float totalTime = [self.selectedActivity.time integerValue];
+            
+            //Not done this yet
+            float timeElasped = 0.0;
+            
+            hour = timeElasped/60;
+            minute = timeElasped - (hour * 60);
+            self.goalField.text = [NSString stringWithFormat:@"%d:%d", hour, minute];
+            
+            self.progressBar.progress = timeElasped/totalTime;
+        }
+        else{
+            self.todayField.text = [NSString stringWithFormat:@"%d:%d", hour, minute];
+            self.progressBar.progress = 1.0;
+        }
+    }
+    else{
+        self.goalField.text = [NSString stringWithFormat:@"Do %@", self.selectedActivity.name];
+        if([self.selectedActivity.startTime isEqualToString:@"NO"]){
+            self.todayField.text = @"Not Complete";
+            self.progressBar.progress = 0.0;
+        }
+        else{
+           self.todayField.text = @"Completed";
+            self.progressBar.progress = 1.0;
+        }
+    }
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

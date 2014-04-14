@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DSSelectedActitvityViewController : UIViewController
+@property (strong, nonatomic) NSString *activityTitle;
 
 @end
