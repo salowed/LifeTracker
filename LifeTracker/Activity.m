@@ -12,7 +12,6 @@
 @implementation Activity
 
 @dynamic aboveBelow;
-@dynamic timeElasped;
 @dynamic completed;
 @dynamic date;
 @dynamic endTime;
@@ -21,6 +20,8 @@
 @dynamic name;
 @dynamic startTime;
 @dynamic time;
+@dynamic timeElasped;
 @dynamic type;
+@dynamic previousDays;
 
 @end

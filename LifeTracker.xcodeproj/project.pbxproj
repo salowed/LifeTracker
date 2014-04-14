@@ -24,8 +24,9 @@
 		9053276E18F2065000622295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9053276C18F2065000622295 /* InfoPlist.strings */; };
 		9053277018F2065100622295 /* LifeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9053276F18F2065100622295 /* LifeTrackerTests.m */; };
 		9053277A18F207E000622295 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053277918F207E000622295 /* Storyboard.storyboard */; };
+		9062AA8818FC7F850054BCBC /* DSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9062AA8718FC7F850054BCBC /* DSMapViewController.m */; };
+		9062AA8B18FC8CAD0054BCBC /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9062AA8A18FC8CAD0054BCBC /* Activity.m */; };
 		90B40A8818FC561300CD149A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B40A8718FC561300CD149A /* CoreLocation.framework */; };
-		90B40A8B18FC57F800CD149A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B40A8A18FC57F800CD149A /* Activity.m */; };
 		90DD393818F4FAD5007AC98C /* DSNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DD393718F4FAD5007AC98C /* DSNewActivityViewController.m */; };
 		90DD393B18F4FE99007AC98C /* DSActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DD393A18F4FE99007AC98C /* DSActivityTableViewController.m */; };
 		90DD393E18F4FECF007AC98C /* DSSelectedActitvityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DD393D18F4FECF007AC98C /* DSSelectedActitvityViewController.m */; };
@@ -63,9 +64,11 @@
 		9053276D18F2065000622295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9053276F18F2065100622295 /* LifeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeTrackerTests.m; sourceTree = "<group>"; };
 		9053277918F207E000622295 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9062AA8618FC7F850054BCBC /* DSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMapViewController.h; sourceTree = "<group>"; };
+		9062AA8718FC7F850054BCBC /* DSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMapViewController.m; sourceTree = "<group>"; };
+		9062AA8918FC8CAD0054BCBC /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		9062AA8A18FC8CAD0054BCBC /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		90B40A8718FC561300CD149A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		90B40A8918FC57F800CD149A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		90B40A8A18FC57F800CD149A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		90DD393618F4FAD5007AC98C /* DSNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNewActivityViewController.h; sourceTree = "<group>"; };
 		90DD393718F4FAD5007AC98C /* DSNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNewActivityViewController.m; sourceTree = "<group>"; };
 		90DD393918F4FE99007AC98C /* DSActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityTableViewController.h; sourceTree = "<group>"; };
@@ -145,12 +148,14 @@
 				90DD393D18F4FECF007AC98C /* DSSelectedActitvityViewController.m */,
 				90DD393918F4FE99007AC98C /* DSActivityTableViewController.h */,
 				90DD393A18F4FE99007AC98C /* DSActivityTableViewController.m */,
+				9062AA8618FC7F850054BCBC /* DSMapViewController.h */,
+				9062AA8718FC7F850054BCBC /* DSMapViewController.m */,
 				90DD393618F4FAD5007AC98C /* DSNewActivityViewController.h */,
 				90DD393718F4FAD5007AC98C /* DSNewActivityViewController.m */,
 				9053275B18F2065000622295 /* Images.xcassets */,
+				9062AA8918FC8CAD0054BCBC /* Activity.h */,
+				9062AA8A18FC8CAD0054BCBC /* Activity.m */,
 				9053275818F2065000622295 /* LifeTracker.xcdatamodeld */,
-				90B40A8918FC57F800CD149A /* Activity.h */,
-				90B40A8A18FC57F800CD149A /* Activity.m */,
 				9053274D18F2065000622295 /* Supporting Files */,
 			);
 			path = LifeTracker;
@@ -283,12 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9053275318F2065000622295 /* main.m in Sources */,
+				9062AA8B18FC8CAD0054BCBC /* Activity.m in Sources */,
 				90DD393818F4FAD5007AC98C /* DSNewActivityViewController.m in Sources */,
-				90B40A8B18FC57F800CD149A /* Activity.m in Sources */,
 				9053275718F2065000622295 /* DSAppDelegate.m in Sources */,
 				9053275A18F2065000622295 /* LifeTracker.xcdatamodeld in Sources */,
 				90DD393B18F4FE99007AC98C /* DSActivityTableViewController.m in Sources */,
 				9032E1DA18F4D29F00AC13F3 /* DSActivity.m in Sources */,
+				9062AA8818FC7F850054BCBC /* DSMapViewController.m in Sources */,
 				90DD393E18F4FECF007AC98C /* DSSelectedActitvityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

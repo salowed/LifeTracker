@@ -16,18 +16,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="Loe-34-n0e" kind="relationship" relationship="viewControllers" id="ZQY-gN-ZbD"/>
-                        <segue destination="zCp-Dd-KIE" kind="relationship" relationship="viewControllers" id="ysa-2s-BDM"/>
                         <segue destination="IDK-jW-B8f" kind="relationship" relationship="viewControllers" id="CxD-Gc-b72"/>
+                        <segue destination="7jh-1S-xiD" kind="relationship" relationship="viewControllers" id="N4S-7T-EF8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2f-lg-NsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-375" y="38"/>
         </scene>
-        <!--View Controller - Map-->
+        <!--Map View Controller - Last 7 Days-->
         <scene sceneID="Faq-CT-qgI">
             <objects>
-                <viewController id="zCp-Dd-KIE" sceneMemberID="viewController">
+                <viewController id="zCp-Dd-KIE" customClass="DSMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qzG-o5-KSx"/>
                         <viewControllerLayoutGuide type="bottom" id="VdP-hk-tsn"/>
@@ -36,20 +36,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwF-PG-z2l">
-                                <rect key="frame" x="140" y="273" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VCb-D0-ZG5">
+                                <rect key="frame" x="0.0" y="65" width="320" height="452"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="Map" id="o3E-kz-rYj"/>
+                    <navigationItem key="navigationItem" title="Last 7 Days" id="ghS-wp-zYS"/>
+                    <connections>
+                        <outlet property="mapView" destination="VCb-D0-ZG5" id="FzV-hx-fV3"/>
+                        <segue destination="mTc-yh-66U" kind="push" identifier="ViewActivityFromMap" id="igD-pb-wa4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeC-fm-vS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="122"/>
+            <point key="canvasLocation" x="947" y="134"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="0ik-JI-3bo">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="7jh-1S-xiD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Dwq-ZG-ixz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oey-Gd-PVL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zCp-Dd-KIE" kind="relationship" relationship="rootViewController" id="bhf-NC-Apw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWr-lU-H82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="112"/>
         </scene>
         <!--View Controller - Tracker-->
         <scene sceneID="aC3-ca-mdb">
@@ -320,4 +339,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="igD-pb-wa4"/>
+    </inferredMetricsTieBreakers>
 </document>

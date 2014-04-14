@@ -143,7 +143,7 @@
     //date
     NSDate *localDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MM/dd/yy";
+    dateFormatter.dateFormat = @"MM/dd/yy/HH:mm:ss.SSS";
     NSString *dateString = [dateFormatter stringFromDate: localDate];
     activityToAdd.date = dateString;
     

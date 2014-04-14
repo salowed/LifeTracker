@@ -68,8 +68,7 @@
         else if([self.selectedActivity.endTime isEqualToString:@"NO"]){
             float totalTime = [self.selectedActivity.time integerValue];
             
-            //Not done this yet
-            float timeElasped = 0.0;
+            float timeElasped = [self.selectedActivity.timeElasped intValue];
             
             hour = timeElasped/60;
             minute = timeElasped - (hour * 60);

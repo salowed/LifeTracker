@@ -24,6 +24,7 @@
         _completed = [decoder decodeObjectForKey:@"completed"];
         _longitude = [decoder decodeObjectForKey:@"longitude"];
         _longitude = [decoder decodeObjectForKey:@"latitude"];
+        _previousDays = [decoder decodeObjectForKey:@"previousDays"];
     }
     
     return self;
@@ -42,6 +43,8 @@
     [coder encodeObject:_completed forKey:@"completed"];
     [coder encodeObject:_longitude forKey:@"longitude"];
     [coder encodeObject:_longitude forKey:@"latitude"];
+    [coder encodeObject:_previousDays forKey:@"previousDays"];
+
 }
 
 
