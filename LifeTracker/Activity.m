@@ -2,24 +2,25 @@
 //  Activity.m
 //  LifeTracker
 //
-//  Created by Daniel Salowe on 4/8/14.
+//  Created by Daniel Salowe on 4/14/14.
 //  Copyright (c) 2014 Danny Salowe. All rights reserved.
 //
 
 #import "Activity.h"
 
+
 @implementation Activity
 
-@dynamic name;
-@dynamic type;
-@dynamic time;
 @dynamic aboveBelow;
-@dynamic date;
-@dynamic startTime;
-@dynamic endTime;
-@dynamic active;
+@dynamic timeElasped;
 @dynamic completed;
-@dynamic longitude;
+@dynamic date;
+@dynamic endTime;
 @dynamic latitude;
+@dynamic longitude;
+@dynamic name;
+@dynamic startTime;
+@dynamic time;
+@dynamic type;
 
 @end

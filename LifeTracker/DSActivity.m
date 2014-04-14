@@ -20,7 +20,7 @@
         _date = [decoder decodeObjectForKey:@"date"];
         _startTime = [decoder decodeObjectForKey:@"startTime"];
         _endTime = [decoder decodeObjectForKey:@"endTime"];
-        _active = [decoder decodeObjectForKey:@"active"];
+        _timeElasped = [decoder decodeObjectForKey:@"timeElasped"];
         _completed = [decoder decodeObjectForKey:@"completed"];
         _longitude = [decoder decodeObjectForKey:@"longitude"];
         _longitude = [decoder decodeObjectForKey:@"latitude"];
@@ -38,7 +38,7 @@
     [coder encodeObject:_date forKey:@"date"];
     [coder encodeObject:_startTime forKey:@"startTime"];
     [coder encodeObject:_endTime forKey:@"endTime"];
-    [coder encodeObject:_active forKey:@"active"];
+    [coder encodeObject:_timeElasped forKey:@"timeElasped"];
     [coder encodeObject:_completed forKey:@"completed"];
     [coder encodeObject:_longitude forKey:@"longitude"];
     [coder encodeObject:_longitude forKey:@"latitude"];

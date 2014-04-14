@@ -76,7 +76,7 @@
         activityToStore.startTime = activity.startTime;
         activityToStore.endTime = activity.endTime;
         activityToStore.type = activity.type;
-        activityToStore.active = activity.active;
+        activityToStore.timeElasped = activity.timeElasped;
         activityToStore.completed = activity.completed;
         activityToStore.longitude = activity.longitude;
         activityToStore.latitude = activity.latitude;
@@ -97,7 +97,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
                                               inManagedObjectContext:self.managedObjectContext];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND time == %@ AND aboveBelow == %@ AND date == %@ AND startTime == %@ AND endTime == %@ AND active == %@ AND completed == %@ AND latitude == %@ AND longitude == %@",activity.name, activity.type,activity.time, activity.aboveBelow, activity.date, activity.startTime, activity.endTime, activity.active, activity.completed, activity.latitude, activity.longitude];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND time == %@ AND aboveBelow == %@ AND date == %@ AND startTime == %@ AND endTime == %@ AND timeElasped == %@ AND completed == %@ AND latitude == %@ AND longitude == %@",activity.name, activity.type,activity.time, activity.aboveBelow, activity.date, activity.startTime, activity.endTime, activity.timeElasped, activity.completed, activity.latitude, activity.longitude];
     fetchRequest.entity = entity;
     
     NSError *error;
@@ -134,7 +134,7 @@
     activityToDelete.startTime = activity.startTime;
     activityToDelete.endTime = activity.endTime;
     activityToDelete.type = activity.type;
-    activityToDelete.active = activity.active;
+    activityToDelete.timeElasped = activity.timeElasped;
     activityToDelete.completed = activity.completed;
     activityToDelete.latitude = activity.latitude;
     activityToDelete.longitude = activity.longitude;
@@ -158,7 +158,7 @@
     activityToDelete.startTime = activity.startTime;
     activityToDelete.endTime = activity.endTime;
     activityToDelete.type = activity.type;
-    activityToDelete.active = activity.active;
+    activityToDelete.timeElasped = activity.timeElasped;
     activityToDelete.completed = activity.completed;
     activityToDelete.latitude = activity.latitude;
     activityToDelete.longitude = activity.longitude;

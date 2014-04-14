@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * date;
 @property (nonatomic, retain) NSString * startTime;
 @property (nonatomic, retain) NSString * endTime;
-@property (nonatomic, retain) NSString * active;
+@property (nonatomic, retain) NSString * timeElasped;
 @property (nonatomic, retain) NSString * completed;
 @property (nonatomic, retain) NSString *longitude;
 @property (nonatomic, retain) NSString *latitude;

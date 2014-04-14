@@ -149,7 +149,7 @@
     
     activityToAdd.startTime = @"NO";
     activityToAdd.endTime = @"NO";
-    activityToAdd.active = @"NO";
+    activityToAdd.timeElasped = @"NO";
     activityToAdd.completed = @"NO";
     
     
