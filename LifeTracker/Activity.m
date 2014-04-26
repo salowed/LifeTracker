@@ -2,7 +2,7 @@
 //  Activity.m
 //  LifeTracker
 //
-//  Created by Daniel Salowe on 4/14/14.
+//  Created by Daniel Salowe on 4/26/14.
 //  Copyright (c) 2014 Danny Salowe. All rights reserved.
 //
 
@@ -11,17 +11,12 @@
 
 @implementation Activity
 
-@dynamic aboveBelow;
 @dynamic completed;
-@dynamic date;
-@dynamic endTime;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
-@dynamic startTime;
-@dynamic time;
-@dynamic timeElasped;
-@dynamic type;
 @dynamic previousDays;
+@dynamic goalTime;
+@dynamic type;
 
 @end

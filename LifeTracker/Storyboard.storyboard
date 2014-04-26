@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-375" y="38"/>
         </scene>
-        <!--Map View Controller - Last 7 Days-->
+        <!--Map View Controller - Today-->
         <scene sceneID="Faq-CT-qgI">
             <objects>
                 <viewController id="zCp-Dd-KIE" customClass="DSMapViewController" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="Map" id="o3E-kz-rYj"/>
-                    <navigationItem key="navigationItem" title="Last 7 Days" id="ghS-wp-zYS"/>
+                    <navigationItem key="navigationItem" title="Today" id="ghS-wp-zYS"/>
                     <connections>
                         <outlet property="mapView" destination="VCb-D0-ZG5" id="FzV-hx-fV3"/>
                         <segue destination="mTc-yh-66U" kind="push" identifier="ViewActivityFromMap" id="igD-pb-wa4"/>
@@ -181,7 +181,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4gN-VP-ukE">
-                                <rect key="frame" x="70" y="195" width="192" height="29"/>
+                                <rect key="frame" x="64" y="271" width="192" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Time"/>
@@ -189,51 +189,37 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-Uf-JS0">
-                                <rect key="frame" x="148" y="153" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5RM-e5-bS9">
-                                <rect key="frame" x="70" y="412" width="192" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Above"/>
-                                    <segment title="Below"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Above/Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHq-ds-xXb">
-                                <rect key="frame" x="115" y="370" width="103" height="21"/>
+                                <rect key="frame" x="142" y="229" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjH-qQ-n8E">
-                                <rect key="frame" x="20" y="293" width="53" height="27"/>
+                                <rect key="frame" x="27" y="414" width="53" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="a9H-m4-Fpy">
-                                <rect key="frame" x="101" y="292" width="61" height="30"/>
+                                <rect key="frame" x="108" y="413" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xZZ-sz-wHX">
-                                <rect key="frame" x="205" y="292" width="61" height="30"/>
+                                <rect key="frame" x="212" y="413" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgm-9S-mW4">
-                                <rect key="frame" x="108" y="263" width="46" height="21"/>
+                                <rect key="frame" x="115" y="384" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLy-SA-wMk">
-                                <rect key="frame" x="205" y="263" width="61" height="21"/>
+                                <rect key="frame" x="212" y="384" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -249,7 +235,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aboveBelowField" destination="5RM-e5-bS9" id="V0B-5W-rx6"/>
                         <outlet property="hourField" destination="a9H-m4-Fpy" id="CQn-0r-hce"/>
                         <outlet property="minuteField" destination="xZZ-sz-wHX" id="f0E-tz-Fc5"/>
                         <outlet property="titleField" destination="nmQ-uD-aQt" id="y3p-AD-Zpo"/>

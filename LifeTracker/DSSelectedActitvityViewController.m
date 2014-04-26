@@ -56,9 +56,9 @@
     
     self.navigationBar.title = self.selectedActivity.name;
     
-    if([self.selectedActivity.type isEqualToString:@"Time"]){
-        int hour = [self.selectedActivity.time integerValue]/60;
-        int minute = [self.selectedActivity.time integerValue] - (hour * 60);
+    /*if([self.selectedActivity.type isEqualToString:@"Time"]){
+        int hour = [self.selectedActivity.goalTime integerValue]/60;
+        int minute = [self.selectedActivity.goalTime integerValue] - (hour * 60);
         self.goalField.text = [NSString stringWithFormat:@"%d:%d", hour, minute];
         
         if([self.selectedActivity.startTime isEqualToString:@"NO"]){
@@ -91,7 +91,7 @@
            self.todayField.text = @"Completed";
             self.progressBar.progress = 1.0;
         }
-    }
+    }*/
     
     
     

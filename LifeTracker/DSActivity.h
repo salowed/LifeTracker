@@ -12,12 +12,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSString * time;
-@property (nonatomic, retain) NSString * aboveBelow;
-@property (nonatomic, retain) NSString * date;
-@property (nonatomic, retain) NSString * startTime;
-@property (nonatomic, retain) NSString * endTime;
-@property (nonatomic, retain) NSString * timeElasped;
+@property (nonatomic, retain) NSString * goalTime;
 @property (nonatomic, retain) NSString * completed;
 @property (nonatomic, retain) NSString *longitude;
 @property (nonatomic, retain) NSString *latitude;

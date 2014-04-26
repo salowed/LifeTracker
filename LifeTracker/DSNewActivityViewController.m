@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *hourField;
 @property (weak, nonatomic) IBOutlet UITextField *minuteField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeField;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *aboveBelowField;
 - (IBAction)donePressed:(id)sender;
 
 //keyboard toolbar
@@ -131,16 +130,16 @@
     DSActivity *activityToAdd = [[DSActivity alloc] init];
     activityToAdd.name = self.titleField.text;
     activityToAdd.type = [self.typeField titleForSegmentAtIndex:self.typeField.selectedSegmentIndex];
-    activityToAdd.aboveBelow = [self.aboveBelowField titleForSegmentAtIndex:self.aboveBelowField.selectedSegmentIndex];
+
     
     //convert to minutes
     int time = ([self.hourField.text intValue] * 60) + [self.minuteField.text intValue];
-    activityToAdd.time = [NSString stringWithFormat:@"%d", time];
+    activityToAdd.goalTime = [NSString stringWithFormat:@"%d", time];
     
     activityToAdd.longitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.longitude];
     activityToAdd.latitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.latitude];
     
-    //date
+    /*//date
     NSDate *localDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"MM/dd/yy/HH:mm:ss.SSS";
@@ -149,7 +148,7 @@
     
     activityToAdd.startTime = @"NO";
     activityToAdd.endTime = @"NO";
-    activityToAdd.timeElasped = @"NO";
+    activityToAdd.timeElasped = @"NO";*/
     activityToAdd.completed = @"NO";
     
     
