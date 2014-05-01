@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="355" y="112"/>
         </scene>
-        <!--View Controller - Tracker-->
+        <!--Day View Example Controller - Tracker-->
         <scene sceneID="aC3-ca-mdb">
             <objects>
-                <viewController id="IDK-jW-B8f" sceneMemberID="viewController">
+                <viewController id="IDK-jW-B8f" customClass="DayViewExampleController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RTX-FD-NRZ"/>
                         <viewControllerLayoutGuide type="bottom" id="atT-GX-Xzu"/>
@@ -82,20 +82,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJV-QY-S3u">
-                                <rect key="frame" x="125" y="273" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJU-gs-9Jg" customClass="MADayView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IDK-jW-B8f" id="9hB-nA-5tq"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracker" image="Bar Graph" id="NbG-BU-gYg"/>
+                    <connections>
+                        <outlet property="view" destination="eJU-gs-9Jg" id="Sp5-3l-bY0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWh-fL-HeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="846"/>
+            <point key="canvasLocation" x="321" y="842"/>
         </scene>
         <!--Activity Table View Controller - Life Tracker-->
         <scene sceneID="NpM-LU-NgF">
@@ -298,12 +303,18 @@
                                 <color key="progressTintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-I2-e5I" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="48" y="81" width="213" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Name of Activity" id="BuI-4r-YEY"/>
                     <connections>
                         <outlet property="goalField" destination="56d-ar-dPY" id="ZeH-FV-LkM"/>
+                        <outlet property="hostView" destination="7hS-I2-e5I" id="kis-I9-A6g"/>
                         <outlet property="navigationBar" destination="BuI-4r-YEY" id="d9G-W0-o4M"/>
                         <outlet property="progressBar" destination="vcm-c4-8Kr" id="5i5-dA-cSM"/>
                         <outlet property="todayField" destination="tgZ-fy-apO" id="Jd3-ea-kKo"/>
