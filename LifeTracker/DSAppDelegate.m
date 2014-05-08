@@ -68,11 +68,35 @@
 {
     if (![self checkIfAlreadyRegistered:activity]) {
         Activity *activityToStore = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
-                                                          inManagedObjectContext:self.managedObjectContext];
+                                                                  inManagedObjectContext:self.managedObjectContext];
         activityToStore.name = activity.name;
         activityToStore.goalTime = activity.goalTime;
         activityToStore.type = activity.type;
-        activityToStore.completed = activity.completed;
+        activityToStore.timerRunning = activity.timerRunning;
+        activityToStore.longitude = activity.longitude;
+        activityToStore.latitude = activity.latitude;
+        activityToStore.previousDays = activity.previousDays;
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {     //committing changes
+            return NO;
+        }
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)addActivity:(Activity *)activity
+{
+    if (![self checkIfActivityRegistered:activity]) {
+        Activity *activityToStore = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+                                                                  inManagedObjectContext:self.managedObjectContext];
+        activityToStore.name = activity.name;
+        activityToStore.goalTime = activity.goalTime;
+        activityToStore.type = activity.type;
+        activityToStore.timerRunning = activity.timerRunning;
         activityToStore.longitude = activity.longitude;
         activityToStore.latitude = activity.latitude;
         activityToStore.previousDays = activity.previousDays;
@@ -93,7 +117,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
                                               inManagedObjectContext:self.managedObjectContext];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND goalTime == %@ AND completed == %@ AND latitude == %@ AND longitude == %@ AND previousDays == %@",activity.name, activity.type,activity.goalTime, activity.completed, activity.latitude, activity.longitude, activity.previousDays];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND goalTime == %@ AND timerRunning == %@ AND latitude == %@ AND longitude == %@ AND previousDays == %@",activity.name, activity.type,activity.goalTime, activity.timerRunning, activity.latitude, activity.longitude, activity.previousDays];
     fetchRequest.entity = entity;
     
     NSError *error;
@@ -103,6 +127,23 @@
     
     return [fetchedResults count] > 0;
 }
+
+- (BOOL)checkIfActivityRegistered:(Activity *)activity
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@ AND type == %@ AND goalTime == %@ AND timerRunning == %@ AND latitude == %@ AND longitude == %@ AND previousDays == %@",activity.name, activity.type,activity.goalTime, activity.timerRunning, activity.latitude, activity.longitude, activity.previousDays];
+    fetchRequest.entity = entity;
+    
+    NSError *error;
+    NSArray *fetchedResults = [self.managedObjectContext
+                               executeFetchRequest:fetchRequest
+                               error:&error];
+    
+    return [fetchedResults count] > 0;
+}
+
 
 - (NSArray *)allActivities
 {
@@ -122,14 +163,18 @@
 
 - (BOOL)deleteActivityFromWrapper:(DSActivity *)activity
 {
-    Activity *activityToDelete = [[Activity alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
+    Activity *activityToDelete = [[Activity alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
     activityToDelete.name = activity.name;
     activityToDelete.goalTime = activity.goalTime;
     activityToDelete.type = activity.type;
-    activityToDelete.completed = activity.completed;
+    activityToDelete.timerRunning = activity.timerRunning;
     activityToDelete.latitude = activity.latitude;
     activityToDelete.longitude = activity.longitude;
     activityToDelete.previousDays = activity.previousDays;
+    
+    BOOL there =[self checkIfActivityRegistered:activityToDelete];
+    NSLog(there ? @"YES there" : @"NO not there" );
     
     [self.managedObjectContext deleteObject:activityToDelete];
     NSError *error;
@@ -146,7 +191,7 @@
     activityToDelete.name = activity.name;
     activityToDelete.goalTime = activity.goalTime;
     activityToDelete.type = activity.type;
-    activityToDelete.completed = activity.completed;
+    activityToDelete.timerRunning = activity.timerRunning;
     activityToDelete.latitude = activity.latitude;
     activityToDelete.longitude = activity.longitude;
     activityToDelete.previousDays = activity.previousDays;

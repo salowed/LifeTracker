@@ -28,11 +28,15 @@
 #import <UIKit/UIKit.h>
 
 #import "MADayView.h" // MADayViewDataSource,MADayViewDelegate
+#import "DSAppDelegate.h"
+
 
 @class MAEventKitDataSource;
 
 @interface DayViewExampleController : UIViewController<MADayViewDataSource,MADayViewDelegate> {
     MAEventKitDataSource *_eventKitDataSource;
 }
+@property (nonatomic, strong) DSAppDelegate *appDelegate;
+@property (nonatomic, strong) NSNumber *count;
 
 @end

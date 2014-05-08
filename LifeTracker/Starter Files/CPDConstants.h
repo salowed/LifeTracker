@@ -17,5 +17,6 @@ extern NSString * const CPDThemeNameStocks;
 extern NSString * const CPDTickerSymbolAAPL;
 extern NSString * const CPDTickerSymbolGOOG;
 extern NSString * const CPDTickerSymbolMSFT;
+extern NSString * const CPDActivity;
 
 @end

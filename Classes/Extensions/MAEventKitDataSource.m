@@ -90,7 +90,6 @@
 {
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setDay:1];
-    
     return [CURRENT_CALENDAR dateByAddingComponents:components toDate:date options:0];
 }
 

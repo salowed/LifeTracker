@@ -12,12 +12,12 @@
 
 @interface Activity : NSManagedObject
 
-@property (nonatomic, retain) NSString * completed;
+@property (nonatomic, retain) NSString * timerRunning;
+@property (nonatomic, retain) NSString * goalTime;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * previousDays;
-@property (nonatomic, retain) NSString * goalTime;
 @property (nonatomic, retain) NSString * type;
 
 @end

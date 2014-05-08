@@ -19,5 +19,6 @@ NSString *  const CPDThemeNameStocks        = @"Stocks";
 NSString *  const CPDTickerSymbolAAPL       = @"AAPL";
 NSString *  const CPDTickerSymbolGOOG       = @"GOOG";
 NSString *  const CPDTickerSymbolMSFT       = @"MSFT";
+NSString *  const CPDActivity               = @"Active";
 
 @end

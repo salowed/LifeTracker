@@ -16,7 +16,7 @@
         _name = [decoder decodeObjectForKey:@"name"];
         _type = [decoder decodeObjectForKey:@"type"];
         _goalTime = [decoder decodeObjectForKey:@"goalTime"];
-        _completed = [decoder decodeObjectForKey:@"completed"];
+        _timerRunning = [decoder decodeObjectForKey:@"timerRunning"];
         _longitude = [decoder decodeObjectForKey:@"longitude"];
         _longitude = [decoder decodeObjectForKey:@"latitude"];
         _previousDays = [decoder decodeObjectForKey:@"previousDays"];
@@ -30,11 +30,11 @@
     [coder encodeObject:_name forKey:@"name"];
     [coder encodeObject:_type forKey:@"type"];
     [coder encodeObject:_goalTime forKey:@"goalTime"];
-    [coder encodeObject:_completed forKey:@"completed"];
+    [coder encodeObject:_timerRunning forKey:@"timerRunning"];
     [coder encodeObject:_longitude forKey:@"longitude"];
     [coder encodeObject:_longitude forKey:@"latitude"];
     [coder encodeObject:_previousDays forKey:@"previousDays"];
-
+    
 }
 
 

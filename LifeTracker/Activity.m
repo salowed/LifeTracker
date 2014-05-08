@@ -11,12 +11,12 @@
 
 @implementation Activity
 
-@dynamic completed;
+@dynamic timerRunning;
+@dynamic goalTime;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
 @dynamic previousDays;
-@dynamic goalTime;
 @dynamic type;
 
 @end

@@ -114,15 +114,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)donePressed:(id)sender {
     
@@ -130,7 +130,7 @@
     DSActivity *activityToAdd = [[DSActivity alloc] init];
     activityToAdd.name = self.titleField.text;
     activityToAdd.type = [self.typeField titleForSegmentAtIndex:self.typeField.selectedSegmentIndex];
-
+    
     
     //convert to minutes
     int time = ([self.hourField.text intValue] * 60) + [self.minuteField.text intValue];
@@ -140,16 +140,16 @@
     activityToAdd.latitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.latitude];
     
     /*//date
-    NSDate *localDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MM/dd/yy/HH:mm:ss.SSS";
-    NSString *dateString = [dateFormatter stringFromDate: localDate];
-    activityToAdd.date = dateString;
-    
-    activityToAdd.startTime = @"NO";
-    activityToAdd.endTime = @"NO";
-    activityToAdd.timeElasped = @"NO";*/
-    activityToAdd.completed = @"NO";
+     NSDate *localDate = [NSDate date];
+     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+     dateFormatter.dateFormat = @"MM/dd/yy/HH:mm:ss.SSS";
+     NSString *dateString = [dateFormatter stringFromDate: localDate];
+     activityToAdd.date = dateString;
+     
+     activityToAdd.startTime = @"NO";
+     activityToAdd.endTime = @"NO";
+     activityToAdd.timeElasped = @"NO";*/
+    activityToAdd.timerRunning = @"NO";
     
     
     int sameName = 0;
@@ -165,13 +165,13 @@
     }
     else{
         if ([self.appDelegate addActivityFromWrapper:activityToAdd]) {
-                [self.navigationController popViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             UIAlertView *somethingWrong = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Something was wrong" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [somethingWrong show];
         }
     }
-
+    
 }
 
 #pragma mark - Keyboard Toolbar
@@ -223,9 +223,9 @@
     }
     
     if (textField == self.hourField) {
-        viewFrame.origin.y = -50;
+        viewFrame.origin.y = -130;
     } else if (textField == self.minuteField) {
-        viewFrame.origin.y = -50;
+        viewFrame.origin.y = -130;
     }
     
     [UIView beginAnimations:nil context:nil];
