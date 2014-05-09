@@ -92,6 +92,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = name;
+    
     return cell;
 }
 

@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextField *hourField;
 @property (weak, nonatomic) IBOutlet UITextField *minuteField;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *typeField;
 - (IBAction)donePressed:(id)sender;
 
 //keyboard toolbar
@@ -129,7 +128,6 @@
     //logic to actually save
     DSActivity *activityToAdd = [[DSActivity alloc] init];
     activityToAdd.name = self.titleField.text;
-    activityToAdd.type = [self.typeField titleForSegmentAtIndex:self.typeField.selectedSegmentIndex];
     
     
     //convert to minutes
@@ -138,6 +136,8 @@
     
     activityToAdd.longitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.longitude];
     activityToAdd.latitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.latitude];
+    
+    activityToAdd.type = @"Time";
     
     /*//date
      NSDate *localDate = [NSDate date];

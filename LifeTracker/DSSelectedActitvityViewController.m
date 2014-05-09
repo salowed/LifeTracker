@@ -8,8 +8,10 @@
 
 #import "DSSelectedActitvityViewController.h"
 #import "DSAppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface DSSelectedActitvityViewController ()
+@interface DSSelectedActitvityViewController ()<CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 - (IBAction)startClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *todayField;
@@ -25,6 +27,7 @@
 @property (nonatomic, strong) CPTBarPlot *msftPlot;
 @property (nonatomic, strong) CPTBarPlot *activityPlot;
 @property (nonatomic, strong) CPTPlotSpaceAnnotation *priceAnnotation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 
 -(void)initPlot;
@@ -57,6 +60,17 @@ NSMutableArray* past7;
     return _appDelegate;
 }
 
+- (CLLocationManager *)locationManager
+{
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.delegate = self;
+    }
+    
+    return _locationManager;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -69,6 +83,8 @@ NSMutableArray* past7;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.locationManager startUpdatingLocation];
     
     // Do any additional setup after loading the view.
     
@@ -198,6 +214,7 @@ NSMutableArray* past7;
     if([self.selectedActivity.type isEqualToString:@"Time"]){
         int hour = [self.selectedActivity.goalTime integerValue]/60;
         int minute = [self.selectedActivity.goalTime integerValue] - (hour * 60);
+        NSLog(@"%d", minute);
         NSString* leadZero;
         if (minute < 10) {
             leadZero = @"0";
@@ -261,6 +278,8 @@ NSMutableArray* past7;
                                                      repeats:YES];
         
         
+        temp.latitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.latitude];
+        temp.longitude = [NSString stringWithFormat:@"%f",[self.locationManager location].coordinate.longitude];
         if ([self.appDelegate deleteActivity:temp2]) NSLog(@"Successfully Deleted");
         
         [self.appDelegate addActivityFromWrapper:temp];

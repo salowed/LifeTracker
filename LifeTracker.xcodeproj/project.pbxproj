@@ -547,6 +547,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Danny Salowe";
 				TargetAttributes = {
+					9053274018F2065000622295 = {
+						DevelopmentTeam = N4963EZCDT;
+					};
 					9053276018F2065000622295 = {
 						TestTargetID = 9053274018F2065000622295;
 					};
@@ -740,6 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
 				INFOPLIST_FILE = "LifeTracker/LifeTracker-Info.plist";
@@ -759,6 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifeTracker/LifeTracker-Prefix.pch";
 				INFOPLIST_FILE = "LifeTracker/LifeTracker-Info.plist";

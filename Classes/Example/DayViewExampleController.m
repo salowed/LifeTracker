@@ -82,16 +82,11 @@ static NSDate *date = nil;
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for(int j = 0; j < self.appDelegate.allActivities.count; j++){
         
-        MAEvent *event = [[MAEvent alloc] init];
         Activity *temp = self.appDelegate.allActivities[j];
         CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
         CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
         CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
         UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-        event.backgroundColor = color;
-        event.textColor = [UIColor whiteColor];
-        event.allDay = NO;
-        event.title = [temp name];
         
         
         NSString *prevDays = temp.previousDays;
@@ -108,6 +103,12 @@ static NSDate *date = nil;
             NSDate *tempDate = [dateFormatter2 dateFromString:[tokenized objectAtIndex:0]];
             for (int i = 0; i < tokenized.count-1; i+=2)
             {
+                MAEvent *event = [[MAEvent alloc] init];
+                event.backgroundColor = color;
+                event.textColor = [UIColor whiteColor];
+                event.allDay = NO;
+                event.title = [temp name];
+
                 if ([tokenized objectAtIndex:i] != Nil){
                     //get the day of this logged
                     NSDate *logDate = [dateFormatter2 dateFromString:[tokenized objectAtIndex:i]];
@@ -122,18 +123,17 @@ static NSDate *date = nil;
                             int loggedTime = [[tokenized objectAtIndex:i+1] integerValue];
                             event.end = [NSDate dateWithTimeInterval:loggedTime sinceDate:logDate];
                             [arr addObject:event];
-                            NSLog(@"TEST %d", loggedTime);
+                            NSLog(@"TEST %@", [tokenized objectAtIndex:i]);
                         }
                         else{
                             NSTimeInterval difference = [logDate timeIntervalSinceDate:tempDate];
-                            
-                            if(difference > 1800 || i == 0){
+                            if(abs(difference) > 1800 || i == 0){
                                 tempDate = [dateFormatter2 dateFromString:[tokenized objectAtIndex:i]];
                                 event.start = logDate;
                                 int loggedTime = [[tokenized objectAtIndex:i+1] integerValue];
                                 event.end = [NSDate dateWithTimeInterval:loggedTime sinceDate:logDate];
                                 [arr addObject:event];
-                                NSLog(@"TEST %d", loggedTime);
+                                 NSLog(@"TEST inside %@", [tokenized objectAtIndex:i]);
                             }
                         }
                         
